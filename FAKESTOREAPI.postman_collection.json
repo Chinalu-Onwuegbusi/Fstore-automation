@@ -1,0 +1,54 @@
+{
+  "info": {
+    "_postman_id": "8fe7c368-dc48-4768-a2d2-14e41f2e0baf",
+    "name": "FAKESTOREAPI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50452915",
+    "_collection_link": "https://go.postman.co/collection/50452915-8fe7c368-dc48-4768-a2d2-14e41f2e0baf?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get a product",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"title should be accurate\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[0].title).to.eql(\"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops\");\r",
+              "});\r",
+              "pm.test(\"validate that category is accurate\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[0].category).to.eql( \"men's clothing\");\r",
+              "});\r",
+              "pm.test(\"Validate the price\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[3].price).to.eql(15.99);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://fakestoreapi.com/products",
+          "protocol": "https",
+          "host": [
+            "fakestoreapi",
+            "com"
+          ],
+          "path": [
+            "products"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
