@@ -53,6 +53,10 @@
               "pm.test(\"Validate ID 18 count\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData[17].rating.count).to.eql(130);\r",
+              "});\r",
+              "pm.test(\"Validate ID 19 price\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[18].price).to.eql(7.96);\r",
               "});"
             ],
             "type": "text/javascript",
